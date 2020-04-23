@@ -1,0 +1,66 @@
+1.	/**								
+2.	* Game of Dice							
+3.	*									
+4.	* This program randomly selects two numbers from 1 - 6 (just like rolling two dice).	
+5.	* Show the dice rolls. It also shows the running score.				
+6.	* Prompts the user to either roll again or lose their turn.			
+7.	* A player scores the sum of the two dice thrown and gradually reaches a higher score as they continue to roll
+8.	* If a single number 1 is thrown on either die, the score for that whole turn is lost. However a double 1 counts as 25.
+9.	* When the score reaches 100 (or more) the game ends.			
+10.	*									
+11.	*/									
+12.										
+13.										
+14.	Start								
+15.	Instantiate Random number generator					
+16.	Instantiate Scanner							
+17.										
+18.	declare and initialize two number variables to hold the two dice draws		
+19.	declare and initialize a number variable to score				
+20.										
+21.	declare and initialize two boolean true while loop control variables		
+22.	declare input variable to scan and receive user's interest			
+23.										
+24.	print welcome! Message to the user					
+25.										
+26.	WHILE (first control is true)						
+27.										
+28.		assign second while loop control to always go back to true value		
+29.		generate two random numbers and assign the values to the two number variables (num1 & num2)
+30.										
+31.		IF ( num1 and num2 are both equal to one )				
+32.			good catch! add 25 to the score				
+33.		ELSE IF ( either of num1 and num2 is equal to one )				
+34.			not lucky day! Do nothing to the score here.			
+35.		ELSE 								
+36.			add num1 and num2 on the previous score value			
+37.		END IF								
+38.										
+39.		print values of num1 and num2					
+40.		print score value							
+41.										
+42.		IF ( score is greater or equal to 100 )					
+43.			print Game Over! score is over 100				
+44.			print gratitude for playing					
+45.		END IF								
+46.										
+47.		assign both control values to have false value				
+48.										
+49.		WHILE (second control is true)						
+50.			prompt if user needs to Roll again.				
+51.			scan user reply						
+52.			IF ( user replied "yes" or "YES"  ) // ignore case			
+53.				go up to first while loop				
+54.			ELSE IF ( user replied "no" or "NO" )  // ignore case			
+55.				assign both while loop controls to be false		
+56.			ELSE ( in case user hit other key than the above two cases unintentional )
+57.				prompt and give it a chance to enter right key either to roll back or quit
+58.				assign both while loop controls to be true		
+59.			END IF							
+60.		END WHILE							
+61.	END WHILE								
+										
+										
+										
+										
+
