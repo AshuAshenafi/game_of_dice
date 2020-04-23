@@ -1,66 +1,74 @@
-1.	/**								
-2.	* Game of Dice							
-3.	*									
-4.	* This program randomly selects two numbers from 1 - 6 (just like rolling two dice).	
-5.	* Show the dice rolls. It also shows the running score.				
-6.	* Prompts the user to either roll again or lose their turn.			
+1.	/**		
+2.	* Game of Dice	
+3.	*			
+4.	* This program randomly selects two numbers from 1 - 6 (just like rolling two dice).
+5.	* Show the dice rolls. It also shows the running score.
+6.	* Prompts the user to either roll again or lose their turn.
 7.	* A player scores the sum of the two dice thrown and gradually reaches a higher score as they continue to roll
 8.	* If a single number 1 is thrown on either die, the score for that whole turn is lost. However a double 1 counts as 25.
-9.	* When the score reaches 100 (or more) the game ends.			
-10.	*									
-11.	*/									
-12.										
-13.										
-14.	Start								
-15.	Instantiate Random number generator					
-16.	Instantiate Scanner							
-17.										
-18.	declare and initialize two number variables to hold the two dice draws		
-19.	declare and initialize a number variable to score				
-20.										
-21.	declare and initialize two boolean true while loop control variables		
-22.	declare input variable to scan and receive user's interest			
-23.										
-24.	print welcome! Message to the user					
-25.										
-26.	WHILE (first control is true)						
-27.										
-28.		assign second while loop control to always go back to true value		
+9.	* When the score reaches 100 (or more) the game ends.
+10.	*			
+11.	*/			
+12.				
+13.	Start		
+14.	Instantiate Random number generator
+15.	Instantiate Scanner	
+16.				
+17.	declare and initialize two number variables to hold the two dice draws
+18.	declare and initialize a number variable to score
+19.				
+20.	declare and initialize two boolean true while loop control variables
+21.	declare and initialize third control variable to switch statement
+22.	declare input variable to scan and receive user's interest
+23.				
+24.	print welcome! Message to the user
+25.				
+26.	WHILE (first control is true)
+27.				
+28.		assign second while loop control to always go back to true value
 29.		generate two random numbers and assign the values to the two number variables (num1 & num2)
-30.										
-31.		IF ( num1 and num2 are both equal to one )				
-32.			good catch! add 25 to the score				
-33.		ELSE IF ( either of num1 and num2 is equal to one )				
-34.			not lucky day! Do nothing to the score here.			
-35.		ELSE 								
-36.			add num1 and num2 on the previous score value			
-37.		END IF								
-38.										
-39.		print values of num1 and num2					
-40.		print score value							
-41.										
-42.		IF ( score is greater or equal to 100 )					
-43.			print Game Over! score is over 100				
-44.			print gratitude for playing					
-45.		END IF								
-46.										
-47.		assign both control values to have false value				
-48.										
-49.		WHILE (second control is true)						
-50.			prompt if user needs to Roll again.				
-51.			scan user reply						
-52.			IF ( user replied "yes" or "YES"  ) // ignore case			
-53.				go up to first while loop				
-54.			ELSE IF ( user replied "no" or "NO" )  // ignore case			
-55.				assign both while loop controls to be false		
-56.			ELSE ( in case user hit other key than the above two cases unintentional )
-57.				prompt and give it a chance to enter right key either to roll back or quit
-58.				assign both while loop controls to be true		
-59.			END IF							
-60.		END WHILE							
-61.	END WHILE								
-										
-										
-										
-										
-
+30.				
+31.		IF ( num1 and num2 are both equal to one )
+32.			assign switch control (third) to be equal to 1
+33.		ELSE IF ( either of num1 and num2 is equal to one )
+34.			assign switch control (third) to be equal to 2
+35.		ELSE 		
+36.			assign switch control  (third) to be equal to 3
+37.		END IF		
+38.				
+39.		SWITCH (third control)
+40.			CASE 1:	
+41.				good catch! add 25 to the score
+42.				break
+43.			CASE 2:	
+44.				assign switch control  (third) to be equal to 2
+45.				break
+46.			DEFAULT:	
+47.				break
+48.		END SWITCH	
+49.				
+50.		print values of num1 and num2
+51.		print score value	
+52.				
+53.		IF ( score is greater or equal to 100 )
+54.			print Game Over! score is over 100
+55.			print gratitude for playing
+56.		END IF		
+57.				
+58.		assign both control values to have false value
+59.				
+60.		WHILE (second control is true)
+61.			prompt if user needs to Roll again.
+62.			scan user reply
+63.			IF ( user replied "yes" or "YES"  ) // ignore case
+64.				go up to first while loop
+65.			ELSE IF ( user replied "no" or "NO" )  // ignore case
+66.				assign both while loop controls to be false
+67.			ELSE ( in case user hit other key than the above two cases unintentional )
+68.				prompt and give it a chance to enter right key either to roll back or quit
+69.				assign both while loop controls to be true
+80.			END IF	
+71.		END WHILE	
+72.	END WHILE		
+73.				
+74.	end		

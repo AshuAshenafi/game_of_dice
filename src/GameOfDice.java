@@ -24,6 +24,7 @@ public class GameOfDice {
         int score = 0;
         boolean cont1 = true;
         boolean cont2;
+        int cont3;
         String input;
 
         // Welcome to the game statement
@@ -40,14 +41,28 @@ public class GameOfDice {
             num2 = 1 + rnd.nextInt(6);
 
             // calculate score
-            if (num1 == 1 && num2 == 1) {
-                score +=  25;
+            // if both random numbers equal to one add 25 to score
+            if(num1 == 1 && num2 == 1){
+                cont3 = 1;
             }
-            else if (num1 == 1 || num2 == 1) {
-                //score +=  0;
+            // else if either of the two (but not both) equal to one score keeps its value
+            else if(num1 != 1 && num2 != 1){
+                cont3 = 2;
             }
-            else {
-                score += (num1 + num2);
+            else{
+                cont3 = 3;
+            }
+
+            switch(cont3){
+            // if both random numbers equal to one add 25 to score
+                case 1: score += 25;
+                        break;
+            // else if either of the two (but not both) equal to one score keeps its value
+                case 2: score += (num1 + num2);
+                        break;
+            // This case means either of the two (but not both) is equal to one so do nothing to the score.
+                default:
+                        break;
             }
 
             // Display the results
